@@ -24,6 +24,8 @@ main:
 	addi $a0, $a0, 1
 	beq $t1,' ', loop 
 	
+	addi $t0, $t0, 1
+	
 	blt $t1, 48, printInvalidNum
 	bgt $t1, 118, exit
 	#beqz $t0, exit 
