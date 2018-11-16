@@ -35,7 +35,7 @@ main:
 	exit:
 	
 	#this print out the count of the string 
-	li $v0, 1 
+	li $v0, 11
 	bgt $t0, 4, printTooLong
 	move $a0, $t0
 	syscall 
@@ -69,7 +69,6 @@ main:
     	and $s5, $t1, $t4 
     	addi $s3, $t2, -55 
     	li $t7, 1 
-    	beq $t7, 1 
     	beq $t7, $s5, convert
     	
     	convert:
