@@ -62,8 +62,8 @@ main:
     	li $v0, 4                                   # load code to print string
     	syscall 
     	j end 
-    	
-    	li $t0, 96
+    	 
+    	li $t0, 64  #if user input is withing range 64 and 91 
     	slt $t1, $t0, $t2
     	slti $t4, $2, 91
     	and $s5, $t1, $t4 
