@@ -28,13 +28,13 @@ main:
 	
 	blt $t1, 48, printInvalidNum
 	bgt $t1, 118, exit
-	#beqz $t0, exit 
+	beqz $t0, printEmpty  
 	
 	j loop
 	
 	exit:
 	
-	
+	#this print out the count of the string 
 	li $v0, 1 
 	bgt $t0, 4, printTooLong
 	move $a0, $t0
@@ -62,6 +62,19 @@ main:
     	li $v0, 4                                   # load code to print string
     	syscall 
     	j end 
+    	
+    	li $t0, 96
+    	slt $t1, $t0, $t2
+    	slti $t4, $2, 91
+    	and $s5, $t1, $t4 
+    	addi $s3, $t2, -55 
+    	li $t7, 1 
+    	beq $t7, 1 
+    	beq $t7, $s5, convert
+    	
+    	convert:
+    	mult $s0, $s1
+    	
 
     	end:
     	li $v0, 10                                  # load code to exit the program
