@@ -72,7 +72,19 @@ main:
     	beq $t7, $s5, convert
     	
     	convert:
-    	mult $s0, $s1
+    	mult $s0, $s1 
+    	subu $t4, $t4, 1
+    	beq $t4, 0, exit_loop
+    	
+    	li $t6, 27 
+    	mult $s0, $t6
+    	mflo $s0
+    	
+    	exit_loop:
+    	subu $t3, $t3, 1
+    	
+    	mulu $s0, $s0, $t1
+    	j loop 
     	
 
     	end:
