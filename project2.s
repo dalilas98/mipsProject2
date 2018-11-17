@@ -41,9 +41,6 @@ main:
 	syscall 
 	j end 
 	
-	
-	
-
 	#after reading  thru string 	
    	 printEmpty:
     	la $a0, emptyInput                  
@@ -83,10 +80,6 @@ main:
     	exit_loop:
     	subu $t3, $t3, 1
     	
-    	mulu $s0, $s0, $t1
-    	j loop 
-    	
-
     	end:
     	li $v0, 10                                  # load code to exit the program
     	syscall
